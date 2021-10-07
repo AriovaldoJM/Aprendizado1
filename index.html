@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizado</title>
+
+    <style>
+        .res{
+
+            color: green;
+            font-size: 25px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Aprendizado</h1>
+
+    <button class="res-positivo">Conseguiu absorver? Clique!</button>
+
+    <button class="res-negativo">Não conseguiu, clique!</button>
+
+    <p class="res"></p>
+    
+    <script>
+
+        const positivo = document.querySelector('.res-positivo')
+        const negativo = document.querySelector('.res-negativo')
+        let res = document.querySelector('.res')
+
+        function capturaClique(){
+            document.addEventListener('click', event =>{
+                const elemento = event.target
+                console.log(elemento)
+                if(elemento.classList.contains('res-positivo')){
+                    res.innerHTML = '<strong>Parabéns, continue forte!</strong>'
+                }
+
+                if(elemento.classList.contains('res-negativo')){
+                    res.innerHTML = '<strong>Nunca desanime, você está criando a estrutura necessária.</strong>'
+                }
+            })
+        }
+
+        capturaClique()
+    </script>
+</body>
+</html>
